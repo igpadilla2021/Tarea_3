@@ -1,4 +1,9 @@
 package Tarea_1;
+
+import Tarea_1.Unidades.Moneda100;
+import Tarea_1.Unidades.Moneda1000;
+import Tarea_1.Unidades.Moneda500;
+
 public class Main {
     public static void main(String[] args){
         Expendedor exp=new Expendedor (3,600,900);
@@ -105,8 +110,6 @@ public class Main {
         c = new Comprador(m, Expendedor.SUPER8, exp);
         System.out.println(c.queConsumiste() + ", " + c.cuantoVuelto());
         m = new Moneda1000();
-        c = new Comprador(m, Expendedor.SUPER8, exp);
-        System.out.println(c.queConsumiste() + ", " + c.cuantoVuelto());
 /** Prueba Tarea_1.Moneda null SUPER 8 */
         m = null;
         c = new Comprador(m, Expendedor.SUPER8, exp);

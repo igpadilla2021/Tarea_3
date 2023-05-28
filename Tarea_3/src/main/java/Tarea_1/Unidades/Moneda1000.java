@@ -1,4 +1,6 @@
-package Tarea_1;
+package Tarea_1.Unidades;
+
+import Tarea_1.Moneda;
 
 /**
  * clase de una moneda de 1000 la cual hereda de Tarea_1.Moneda

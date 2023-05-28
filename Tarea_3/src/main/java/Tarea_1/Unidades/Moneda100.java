@@ -1,23 +1,25 @@
-package Tarea_1;
+package Tarea_1.Unidades;
+
+import Tarea_1.Moneda;
 
 /**
- * clase de una moneda de 500 la cual hereda de Tarea_1.Moneda
+ * clase de una moneda de 100 la cual hereda de Tarea_1.Moneda
  */
-public class Moneda500 extends Moneda {
+public class Moneda100 extends Moneda {
     /**
      * Hereda el metodo constructor de Tarea_1.Moneda
      */
-    public Moneda500() {
+    public Moneda100() {
         super();
     }
 
     /**
      * metodo getvalor el cual da el valor de la moneda
      *
-     * @return Int que da el valor 500
+     * @return Int que da el valor 100
      */
     public int getValor() {
-        return 500;
+        return 100;
     }
 
     @Override

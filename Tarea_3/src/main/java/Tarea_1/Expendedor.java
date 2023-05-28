@@ -1,5 +1,10 @@
 package Tarea_1;
 
+import Tarea_1.Exceptions.NoHayProductoException;
+import Tarea_1.Exceptions.PagoIncorrectoException;
+import Tarea_1.Exceptions.PagoInsuficienteException;
+import Tarea_1.Unidades.*;
+
 /**
  *Clase que define a el Expendedor
  * @author Ignacio Padilla

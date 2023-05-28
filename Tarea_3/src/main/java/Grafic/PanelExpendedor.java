@@ -10,6 +10,9 @@ import java.awt.event.MouseListener;
 
 import Elementos.*;
 import Tarea_1.*;
+import Tarea_1.Unidades.Moneda100;
+import Tarea_1.Unidades.Moneda1000;
+import Tarea_1.Unidades.Moneda500;
 
 public class PanelExpendedor extends JPanel implements MouseListener {
     /**

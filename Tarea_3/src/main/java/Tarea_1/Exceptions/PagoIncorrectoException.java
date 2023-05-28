@@ -1,4 +1,4 @@
-package Tarea_1;
+package Tarea_1.Exceptions;
 
 public class PagoIncorrectoException extends Exception {
     public PagoIncorrectoException(String error){
