@@ -17,7 +17,7 @@ class ExpendedorTest {
     @Test
     @DisplayName("Test Excepcion Moneda Null")
     void ExcepcionMonedaNull() {
-        expendedor = new Expendedor(1);
+        expendedor = new Expendedor(1, 500, 900);
         Throwable exception = assertThrows(PagoIncorrectoException.class, () -> {
             expendedor.comprarProducto(null,1); //verifica que se dispara el mensaje si jo se dispara el equals falla
         });
@@ -27,7 +27,7 @@ class ExpendedorTest {
     @Test
     @DisplayName("Test Excepcion No Hay Producto")
     void ExcepcionNoHayProducto() {
-        expendedor = new Expendedor(0);
+        expendedor = new Expendedor(0, 500, 900);
         Throwable exception = assertThrows(NoHayProductoException.class, () -> {
             expendedor.comprarProducto(new Moneda1000(),1);
         });
@@ -37,7 +37,7 @@ class ExpendedorTest {
     @Test
     @DisplayName("Test Excepcion Pago Insuficiente")
     void ExcepcionPagoInsufuciente() {
-        expendedor = new Expendedor(1);
+        expendedor = new Expendedor(1, 500, 900);
         Throwable exception = assertThrows(PagoInsuficienteException.class, () -> {
             expendedor.comprarProducto(new Moneda100(),1);
         });
@@ -47,7 +47,7 @@ class ExpendedorTest {
     @Test
     @DisplayName("Test Llenar Deposito Vacio")
     void LlenarDeposito() throws NoHayProductoException, PagoInsuficienteException, PagoIncorrectoException {
-        expendedor = new Expendedor(1);
+        expendedor = new Expendedor(1, 500, 900);
         expendedor.comprarProducto(new Moneda1000(),1);
         expendedor.llenarDeposito(1);
         assertNotNull(expendedor.comprarProducto(new Moneda1000(),1));

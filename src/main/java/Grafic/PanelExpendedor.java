@@ -38,7 +38,7 @@ public class PanelExpendedor extends JPanel implements MouseListener {
         this.setLayout(null);
         this.pp=pp;
 
-        exp=new Expendedor(24);
+        exp=new Expendedor(24,0,1100);
         md=new DepMonedas();
 
         vuelto=new DepVuelto();

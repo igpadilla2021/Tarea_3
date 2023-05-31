@@ -12,11 +12,13 @@ import Tarea_1.Unidades.*;
  */
 
 
-public class Expendedor {
+public class
+Expendedor {
     /**
      * cuatro depositos de tipo Producto para almacenar nuestras bebidas y dulces, y un deposito del tipo Tarea_1.Moneda para
      * almacenar nuestro vuelto en monedas.
      *
+     * tambien dos Int para definir COCA = 1, SPRITE = 2, SNIKERS = 3, SUPER8 = 4;
      *
      * finalmente dos Int los cuales son el precio de las bebidas y el precio de los dulces
      */
@@ -25,27 +27,51 @@ public class Expendedor {
     private Deposito<Producto> snickers;
     private Deposito<Producto> super8;
     private Deposito<Moneda> monVu;
-    private int precioCoca;
-    private int precioSprite;
-    private int precioSnicker;
-    private int precioSuper8;
+    public static final int COCA=1;
+    public static final int  SPRITE=2;
+    public static final int  SNIKERS=3;
+    public static final int  SUPER8=4;
+    private int precioBebidas;
+    private int precioDulces;
     private int pcoca;
     private int psprite;
     private int psnickers;
     private int psuper8;
     private int numProductos;
 
+    public enum productoPrecio{
+
+        COCA(1, 700),
+        SPRITE(2, 600),
+        SNICKERS(3, 400),
+        SUPER8(4, 300);
+
+        private final int producto;
+        private final int precio;
+
+        productoPrecio(int producto, int precio){
+            this.producto = producto;
+            this.precio = precio;
+        }
+
+        public int getPrecio(){
+            return precio;
+        }
+        public int getProducto(){
+            return producto;
+        }
+    }
 
     /**
      * metodo constructor de el Expendedor donde se definen todos los depositos de productos y el de monedas, ademas de
      * rellenar los depositos
      * @param numProductos Int de la cantidad de bebidas y dulces con los que se rellenan los depositos
+     * @param precioBebidas Int de el precio que se les da a las bebidas
+     * @param precioDulces Int de el precio que se les da a los Dulces
      */
-    public Expendedor(int numProductos){
-        this.precioCoca=Seleccion.COCA.getPrecio();
-        this.precioSprite=Seleccion.SPRITE.getPrecio();
-        this.precioSnicker=Seleccion.SNICKERS.getPrecio();
-        this.precioSuper8=Seleccion.SUPER8.getPrecio();
+    public Expendedor(int numProductos, int precioBebidas, int precioDulces){
+        this.precioBebidas=precioBebidas;
+        this.precioDulces=precioDulces;
         this.numProductos=numProductos;
         pcoca=100;
         psprite=200;
@@ -82,8 +108,7 @@ public class Expendedor {
         if (m==null){
             throw new PagoIncorrectoException("ERROR, se intento comprar sin dinero");
         }
-        if (((cual == 1) && (m.getValor() >= precioCoca)) || ((cual == 2) && (m.getValor() >= precioSprite)) ||
-                ((cual == 3) && (m.getValor() >= precioSnicker)) || ((cual == 4) && (m.getValor() >= precioSuper8))) {
+        if (((cual==1 || cual==2) && m.getValor()>=precioBebidas) || ((cual==3 || cual==4) && m.getValor()>=precioDulces)){
             if (cual==1){
                 b = coca.get();
             }
@@ -96,23 +121,13 @@ public class Expendedor {
             else {
                 b=super8.get();
             }
-            if(b!=null && cual==1){
-                for (p=0; p<((m.getValor() - precioCoca)/100); p=p+1){
+            if(b!=null && (cual==1 || cual==2)){
+                for (p=0; p<((m.getValor() - precioBebidas)/100); p=p+1){
                     this.monVu.add(new Moneda100());
                 }
             }
-            else if(b!=null && cual==2){
-                for (p=0; p<((m.getValor() - precioSprite)/100); p=p+1){
-                    this.monVu.add(new Moneda100());
-                }
-            }
-            else if(b != null && cual==3){
-                for (p=0; p<((m.getValor() - precioSnicker)/100); p=p+1){
-                    this.monVu.add(new Moneda100());
-                }
-            }
-            else if(b != null && cual==4){
-                for (p=0; p<((m.getValor() - precioSuper8)/100); p=p+1){
+            else if(b != null){
+                for (p=0; p<((m.getValor() - precioDulces)/100); p=p+1){
                     this.monVu.add(new Moneda100());
                 }
             }

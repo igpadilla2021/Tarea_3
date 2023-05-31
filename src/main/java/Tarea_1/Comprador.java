@@ -15,7 +15,6 @@ public class Comprador {
     private String sonido;
     private int vuelto;
     private Producto p1;
-
     /** Metodo constructor de Comprador que se encarga de hacer la comprar y administrar el vuelto, si la moneda NO es
      * nula, se compra un producto y se checkea si el producto existe. Luego se le da el valor a sonido y vuelto.
      *
