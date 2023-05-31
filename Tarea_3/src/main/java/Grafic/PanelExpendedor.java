@@ -8,8 +8,9 @@ import java.awt.*;
 import java.awt.event.MouseEvent;
 import java.awt.event.MouseListener;
 
-import Elementos.*;
 import Tarea_1.*;
+import Elementos.DepMonedas;
+import Elementos.DepVuelto;
 import Tarea_1.Unidades.Moneda100;
 import Tarea_1.Unidades.Moneda1000;
 import Tarea_1.Unidades.Moneda500;

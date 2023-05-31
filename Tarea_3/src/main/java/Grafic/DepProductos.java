@@ -3,7 +3,11 @@ package Grafic; /**
  * @author Ignacio Padilla
  * @author Joaquin Garcia
  */
-import Elementos.*;
+import Elementos.DepCoca;
+import Elementos.DepSnickers;
+import Elementos.DepSprite;
+import Elementos.DepSuper8;
+
 import javax.swing.*;
 import java.awt.*;
 public class DepProductos extends JPanel {
