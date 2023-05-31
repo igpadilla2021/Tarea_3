@@ -1,1 +1,2 @@
-# Tarea_3
+Ignacio Padilla
+Joaquin Garcia
