@@ -39,6 +39,29 @@ Expendedor {
     private int psuper8;
     private int numProductos;
 
+    public enum productoPrecio{
+
+        COCA(1, 700),
+        SPRITE(2, 600),
+        SNICKERS(3, 400),
+        SUPER8(4, 300);
+
+        private final int producto;
+        private final int precio;
+
+        productoPrecio(int producto, int precio){
+            this.producto = producto;
+            this.precio = precio;
+        }
+
+        public int getPrecio(){
+            return precio;
+        }
+        public int getProducto(){
+            return producto;
+        }
+    }
+
     /**
      * metodo constructor de el Expendedor donde se definen todos los depositos de productos y el de monedas, ademas de
      * rellenar los depositos
